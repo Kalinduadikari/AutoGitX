@@ -29,12 +29,11 @@ else:
 
 
 options = webdriver.ChromeOptions()
-options.add_argument('--headless') 
 options.add_experimental_option("detach", True)
 
 
 # Specify the path to the ChromeDriver executable
-chromedriver_path = "/Users/kalinduadikari/Downloads/newcdriver/chromedriver_mac_arm64/chromedriver"
+chromedriver_path = "/Users/kalinduadikari/DOCs/ch/chromedriver-mac-arm64/chromedriver"
 
 # Create a Service object
 service = Service(executable_path=chromedriver_path)
@@ -57,7 +56,7 @@ login_button.click()
 browser.get("https://github.com/new")
 
 # Find the input field by its ID and set the repository name
-name_field = browser.find_element(By.ID, "react-aria-3")
+name_field = browser.find_element(By.XPATH, '//input[@aria-label="Repository"]')
 name_field.clear()
 name_field.send_keys(repo_name)
 
