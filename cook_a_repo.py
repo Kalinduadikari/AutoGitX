@@ -29,6 +29,7 @@ else:
 
 
 options = webdriver.ChromeOptions()
+options.add_argument('--headless') 
 options.add_experimental_option("detach", True)
 
 
